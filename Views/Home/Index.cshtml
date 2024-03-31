@@ -1,0 +1,27 @@
+﻿@model RandomDataServices.Models.RandomDataServiceModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Services. Random data generation</h1><br />
+</div>
+<div style="background-color:#999999">
+    <p>Код підтвердження (6-символьний рядок): <strong>@Model.ConfirmationCode</strong> </p>
+    <p>Колекція допустимих символів: @Model.ConfirmationCodeСharsCollection </p>
+  
+</div>
+<div style="background-color:#999999">
+    <p>крипто-сіль - 32-символьні рядки: <strong>@Model.CryptoSalt</strong></p>
+    <p>Колекція допустимих символів: @Model.CryptoSaltCharsCollection</p>
+</div>
+<div style="background-color:#999999">
+    <p>Рядок для назви файлу: <strong>@Model.Filename</strong></p>
+    <p>Колекція допустимих символів: @Model.FileNameCharsCollection </p>
+ </div>
+
+
+<form asp-controller="Home" asp-action="GenerateRandomData" method="post">
+    <button type="submit">Сгенерировать новые данные</button>
+</form>
